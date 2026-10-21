@@ -1,0 +1,72 @@
+Member 1: Searching, sorting and Time Complexity (the store and lookup). -- Malaki
+
+Member 2: Automated testing (the test suite). -- Unreserved
+
+Member 3: Exception Mechanisms (file handling and validation). -- Unreserved
+
+Member 4: Use of Interfaces in OO Programs (the architecture). -- Dre
+
+
+-----------------------------------------------------------------------------------------------------------------------
+**Member 1: Searching, Sorting, and Time Complexity (the store and lookup)**
+Implements HashStore: a HashMap<path, FileRecord> for O(1) lookup, plus saving to and loading from a file.
+Adds duplicate detection with Map<hash, Set<path>>.
+
+Adds sorted listing of records (by path, size or date) using Comparator and Collections.sort.
+Implements a linear search and a binary search over the sorted list, and benchmarks both against the HashMap lookup on,
+say, 1,000 / 10,000 / 100,000 records.
+
+Slides: Big-O (O(1), O(n), O(log n), O(n log n)), why HashMap lookup is fast,
+linear vs binary search, sorting algorithms and their complexity, and your benchmark results.
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+**Member 2: Automated Testing (the test suite)**
+Writes JUnit 5 tests for everyone’s components: known hash values for each algorithm, temp files (@TempDir),
+assertThrows for Member 3’s exceptions, store save/load round-trips, and sort/search correctness for Member 1.
+
+Includes parameterised tests (for example, many input/expected-hash pairs) and edge cases such as empty files,
+missing files and duplicates.
+
+Slides: unit testing, test structure (arrange/act/assert), parameterised tests, coverage, and what the tests caught.
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+**Member 3: Exception Mechanisms (file handling and validation)**
+Owns the validator service: reading files safely, comparing hashes, producing results.
+
+Builds a custom exception hierarchy, uses try-with-resources, and handles missing or unreadable files and bad user
+input.
+
+Slides: checked vs unchecked exceptions, custom exceptions, try-with-resources, and when to throw vs return a result
+(for example, is a hash mismatch an error or just a result?).
+-----------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------
+**Member 4: Use of Interfaces in OO Programs (the architecture)**
+Owns the shared contract: the HashAlgorithm and HashStore interfaces, plus the FileRecord and ValidationResult types.
+
+Writes the algorithm implementations (SHA-256, MD5, CRC32) so the user can choose one.
+
+Owns main and the menu that ties everything together.
+
+Slides: what an interface is, programming to an interface, and swapping implementations without changing calling code.
+-----------------------------------------------------------------------------------------------------------------------
+
+
+The sub-topics available for selection by each team member are -
+• General OO Concepts (inheritance, abstract, visibility)
+• Use of Interfaces in OO programs
+• Exception mechanisms
+• Automated testing
+• Using Lists, Stacks, and Queues
+• Using Sets and Maps
+• Searching, Sorting, and Time complexity
+• Functional Style Programming
+• UML Class Models
+Remember: Each team member must select a different sub-topic to all other members of their team.
+
+
+Each team must -
+• Submit all artefacts they have produced, such as source code, design documents, test code etc.
+to the MyBeckett site. (as a zip file).
